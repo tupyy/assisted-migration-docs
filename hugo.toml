@@ -1,0 +1,59 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Assisted Migration'
+theme = 'docsy'
+
+[params]
+  description = "VMware to OpenShift Virtualization migration assessment"
+  github_repo = "https://github.com/kubev2v/migration-planner"
+  github_project_repo = "https://github.com/kubev2v/migration-planner"
+
+  # Enable Lunr.js offline search
+  offlineSearch = true
+
+  # Disable math (KaTeX) - conflicts with shell $ in code blocks
+  math = false
+
+  [params.ui]
+    sidebar_menu_compact = true
+    breadcrumb_disable = false
+    sidebar_search_disable = false
+    navbar_logo = true
+    footer_about_enable = false
+
+  [params.links]
+    [[params.links.developer]]
+      name = "GitHub"
+      url = "https://github.com/kubev2v/migration-planner"
+      icon = "fab fa-github"
+
+[menu]
+  [[menu.main]]
+    name = "Documentation"
+    weight = 10
+    url = "/docs/"
+  [[menu.main]]
+    name = "Blog"
+    weight = 20
+    url = "/blog/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+  [markup.highlight]
+    style = 'monokai'
+
+[module]
+  proxy = "direct"
+  [module.hugoVersion]
+    extended = true
+    min = "0.110.0"
+  [[module.imports]]
+    path = "github.com/google/docsy"
+  [[module.imports]]
+    path = "github.com/google/docsy/dependencies"
